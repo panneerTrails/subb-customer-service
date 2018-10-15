@@ -1,0 +1,17 @@
+---
+applications:
+- name: CustomerService
+  instance: 1
+  host: myCustomer
+  path: build\libs\CustomerService-0.0.1-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  services:
+    - test-eureka
+    - test-rabbit
+    - test-mongo
+  env:
+     JBP_CONFIG_DEBUG: '{enabled: true}'
+
+
+
+
